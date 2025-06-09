@@ -1,6 +1,6 @@
 import mysql.connector
-from handlers import process_ticket
-from models import Ticket, ProcessedTicket
+from llm.handlers import process_ticket
+from llm.models import Ticket, ProcessedTicket
 
 conn = mysql.connector.connect(
     host = 'localhost',
