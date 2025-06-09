@@ -35,9 +35,9 @@ def process_ticket(ticket: Ticket) -> ProcessedTicket:
     - Category (Process the tickets and assign any one among (Core Services & Backend systems, Product Development & UX, Platform & Infra, Data & System Management))
     - Sub-Category (Process the tickets and assign any one among (Backend Engineering,Payments Team,Search Platform,Messaging Infrastructure,Release Engineering,Infrastructure,Database Administration,Mobile Development,Data Engineering,Frontend/UX,Network Security,Internal Services,Cloud Engineering,System Operations,DevOps,Release Engineering,Partnership Integrations,Frontend Engineering,Platform Operations,Authentication Services))
     - Assigned Employee (Just the name. Do not repeat if aldready assigned)
-    - Reason for assignment (one sentence)
+    - Solution (one sentence)
 
-    do not say unnecessary things, other than the things I asked you for. Only generate what I asked you, in the same format.
+    do not say unnecessary things, other than the things I asked you for. Only generate what I asked you, in the same format(do not highlght anything).
     """
 
     headers = {
@@ -75,7 +75,7 @@ def process_ticket(ticket: Ticket) -> ProcessedTicket:
             category=pres["category"],
             sub_category=pres["sub_category"],
             assigned_to=pres["assigned_to"],
-            reason=pres["reason"]
+            solution=pres["solution"]
         )
     else:
         if response.status_code == 429:
@@ -89,7 +89,7 @@ def parse_gemini_response(text: str) -> dict:
         'category': '',
         'sub_category': '',
         'assigned_to': '',
-        'reason': ''
+        'solution': ''
     }
 
     lines = text.strip().split('\n')
@@ -112,7 +112,7 @@ def parse_gemini_response(text: str) -> dict:
             result['sub_category'] = value
         elif key == 'assigned employee':
             result['assigned_to'] = value[:200]
-        elif key == 'reason for assignment':
-            result['reason'] = value
+        elif key == 'solution':
+            result['solution'] = value
 
     return result

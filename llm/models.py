@@ -28,4 +28,4 @@ class ProcessedTicket(BaseModel):
     category: str
     sub_category: str
     assigned_to: str
-    reason: str
+    solution: str

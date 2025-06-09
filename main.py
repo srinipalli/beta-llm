@@ -30,7 +30,7 @@ for i in t:
         assigned_date = i[10]
     )
     processed = process_ticket(ticketz)
-    cursor.execute("INSERT INTO processed (ticket_id, summary, priority, category, sub_category, assigned_to, reason) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                   (processed.ticket_id, processed.summary, processed.priority, processed.category, processed.sub_category, processed.assigned_to, processed.reason))
+    cursor.execute("INSERT INTO processed (ticket_id, summary, priority, category, sub_category, assigned_to, solution) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                   (processed.ticket_id, processed.summary, processed.priority, processed.category, processed.sub_category, processed.assigned_to, processed.solution))
     conn.commit()
 conn.close()
