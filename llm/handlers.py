@@ -8,7 +8,7 @@ load_dotenv()
 GEMINI_API_URL = os.getenv("GEMINI_API_URL")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-REQUEST_INTERVAL_SECONDS = 2.00
+REQUEST_INTERVAL_SECONDS = 2.25
 last_request_time = 0
 
 def process_ticket(ticket: Ticket) -> ProcessedTicket:
@@ -32,9 +32,8 @@ def process_ticket(ticket: Ticket) -> ProcessedTicket:
     Please return:
     - Summary (in about 50 to 75 words)
     - Priority (L1, L2 or L3. and if it is Critical, High, Medium, Low or Planning appropriately)
-    - Category (one word)
-    - Sub-category (one word)
-    - Assigned Employee (Just the name)
+    - Category (Process the tickets and assign any one among (Core Services & Backend systems, Product Development & UX, Platform & Infra, Data & System Management))
+    - Assigned Employee (Just the name. Do not repeat)
     - Reason for assignment (one sentence)
 
     do not say unnecessary things, other than the things I asked you for. Only generate what I asked you, each not more than one sentence.
