@@ -53,7 +53,7 @@ if consent.lower() == "y":
             cursor.execute(f'SELECT ticket_id FROM processed WHERE ticket_id = "{ticketz.ticket_id}";')
             a = cursor.fetchone()
             if a is not None:
-                assign_ticket(ticketz.ticket_id)
+                assign_ticket(ticketz.ticket_id, conn)
                 print(f'Ticket {ticketz.ticket_id} is assigned.')
             else:
                 print(f'Ticket {ticketz.ticket_id} was not assigned, unfortunately.')
@@ -69,7 +69,7 @@ if consent.lower() == "y":
         if processedTicketId not in assignedList:
             print(f'Ticket {processedTicketId} was processed but not assigned. Now retrying...')
             try:
-                assign_ticket(processedTicketId)
+                assign_ticket(processedTicketId, conn)
             except Exception as e:
                 print(f'Failed to assign ticket {processedTicketId} again')
                 print(f'Error:\n{e}')
