@@ -23,7 +23,7 @@ def process_ticket(ticket: Ticket) -> ProcessedTicket:
         time.sleep(time_to_wait)
 
     prompt_text = f"""
-    You are an expert IT support assistant.
+    You are an expert IT support assistant, with expertise in all areas of IT. 
     Given the following ticket:
     Title: {ticket.title}
     Description: {ticket.description}
@@ -32,12 +32,12 @@ def process_ticket(ticket: Ticket) -> ProcessedTicket:
     Please return:
     - Summary (in about 50 to 75 words)
     - Priority (L1, L2 or L3. and if it is Critical, High, Medium, Low or Planning appropriately)
-    - Category (Process the tickets and assign any one among (Core Services & Backend systems, Product Development & UX, Platform & Infra, Data & System Management))
-    - Sub-Category (Process the tickets and assign any one among (Backend Engineering,Payments Team,Search Platform,Messaging Infrastructure,Release Engineering,Infrastructure,Database Administration,Mobile Development,Data Engineering,Frontend/UX,Network Security,Internal Services,Cloud Engineering,System Operations,DevOps,Release Engineering,Partnership Integrations,Frontend Engineering,Platform Operations,Authentication Services))
-    - Assigned Employee (Just the name. Do not repeat if aldready assigned)
+    - Category (Process the tickets and assign any one among (Core Services & Backend services, Product Development & UX, Platform & Infra, Data & System Management))
     - Solution (one sentence)
-
+    
+    make sure to provide expert responses, with accurate and concise information.
     do not say unnecessary things, other than the things I asked you for. Only generate what I asked you, in the same format(do not highlght anything).
+    do not use highlighting, markdown or code blocks. Do not communicate with the user directly.
     """
 
     headers = {
@@ -60,12 +60,12 @@ def process_ticket(ticket: Ticket) -> ProcessedTicket:
         result = response.json()
         generated_text = result["candidates"][0]["content"]["parts"][0]["text"]
         print("Raw generated text from Gemini:")
-        print(generated_text)
+        print(f"generated_text for ticket {ticket.ticket_id}")
         print("\n-------------------\n")
 
         pres = parse_gemini_response(generated_text)
         print("Parsed result:")
-        print(pres)
+        print(f"parsed result for ticket {ticket.ticket_id}")
         print("\n-------------------\n")
 
         return ProcessedTicket(
@@ -73,8 +73,6 @@ def process_ticket(ticket: Ticket) -> ProcessedTicket:
             summary=pres["summary"],
             priority=pres["priority"],
             category=pres["category"],
-            sub_category=pres["sub_category"],
-            assigned_to=pres["assigned_to"],
             solution=pres["solution"]
         )
     else:
@@ -87,8 +85,6 @@ def parse_gemini_response(text: str) -> dict:
         'summary': '',
         'priority': '',
         'category': '',
-        'sub_category': '',
-        'assigned_to': '',
         'solution': ''
     }
 
@@ -108,11 +104,6 @@ def parse_gemini_response(text: str) -> dict:
             result['priority'] = value
         elif key == 'category':
             result['category'] = value
-        elif key == 'sub-category':
-            result['sub_category'] = value
-        elif key == 'assigned employee':
-            result['assigned_to'] = value[:200]
         elif key == 'solution':
             result['solution'] = value
-
     return result

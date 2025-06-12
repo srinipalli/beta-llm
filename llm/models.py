@@ -26,6 +26,4 @@ class ProcessedTicket(BaseModel):
     summary: str
     priority: str
     category: str
-    sub_category: str
-    assigned_to: str
     solution: str
