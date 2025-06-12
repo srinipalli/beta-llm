@@ -33,6 +33,7 @@ def assign_ticket(ticketId: str, conn):
         print("priority: ",p)
         cursor2.execute(f'SELECT employee_id FROM employee WHERE category = "{c}" AND triage = "{p}" AND role = "P" LIMIT 1;')
         aidz = cursor2.fetchall()
+        print(aidz)
         aid = aidz[0][0]
         print("assigned id: ",aid)
         cursor2.execute(f'SELECT assigned_date FROM main_table WHERE ticket_id = "{ticketId}" LIMIT 1;')
@@ -56,5 +57,4 @@ def assign_ticket(ticketId: str, conn):
 # print(f"{len(tickets)} tickets are now being fetched from the database.")
 # for i in tickets:
 #     assign_ticket(i[0],conn)
-    
 conn.close()
