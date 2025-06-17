@@ -27,7 +27,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=GEMINI_API
 response_schemas = [
     ResponseSchema(name="summary", description="Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary."),
     ResponseSchema(name="priority", description="L1, L2, L3, L4 ,L5. Think carefully what the priority is, based on the description of the ticket. It should be realistic based on real-life scenarios."),
-    ResponseSchema(name="category", description="High-level ticket category: Process the tickets and assign any one among (Core Services & Product Services, Product Development & UX, Platform & Infrastructure, Data & System Management)"),
+    ResponseSchema(name="category", description="High-level ticket category: Process the tickets and assign any one among (Core Services and Backend Services, Backend Development and UX, Platform and Infrastructure, Data and System Management)"),
     ResponseSchema(name="solution", description="solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.")
 ]
 
