@@ -17,7 +17,9 @@ conn = mysql.connector.connect(
     password=os.getenv("MYSQL_PASSWORD"),
     database=os.getenv("MYSQL_DB")
 )
-
+print("DATABASE ⏱️: USING ", os.getenv("MYSQL_DB"))
+print("¯"*40)
+print()
 # --- Config ---
 MAX_CONCURRENT_LLM_REQUESTS = 5
 MAX_REQUESTS_PER_MINUTE = 60
@@ -64,20 +66,25 @@ async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Sem
 
             cursor = db_conn.cursor()
             cursor.execute("""
-                INSERT INTO processed (ticket_id, summary, priority, category, solution)
+                INSERT INTO processed (ticket_id, summary, triage, category, solution)
                 VALUES (%s, %s, %s, %s, %s)
                 ON DUPLICATE KEY UPDATE
                     summary=VALUES(summary),
-                    priority=VALUES(priority),
+                    triage=VALUES(triage),
                     category=VALUES(category),
                     solution=VALUES(solution)
             """, (
                 processed.ticket_id,
                 processed.summary,
-                processed.priority.strip(),
+                processed.triage.strip(),
                 processed.category.strip(),
                 processed.solution
             ))
+            db_conn.commit()
+            cursor.execute("""
+                INSERT INTO reasons (ticket_id, triage_reason, category_reason)
+                VALUES (%s, %s, %s)
+            """, (processed.ticket_id, processed.triage_reason, processed.category_reason))
             db_conn.commit()
             print(f"📥 Inserted/Updated processed ticket {processed.ticket_id}")
 
@@ -88,7 +95,7 @@ async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Sem
             return processed
 
         except Exception as e:
-            print(f"❌ [ERROR] Processing failed for {ticket.ticket_id}: {e}")
+            print(f"❌ [ERROR] Processing ƒailed ƒor ticket {ticket.ticket_id}: {e}")
             return None
 
 # --- Retry loop for all tickets ---
@@ -105,7 +112,7 @@ async def process_all_tickets():
             module=row[2],
             title=row[3],
             description=row[4] or "",
-            priority=row[5] or "",
+            triage=row[5] or "",
             status=row[6],
             category=row[7] or "",
             reported_date=row[8],
@@ -114,7 +121,7 @@ async def process_all_tickets():
         ) for row in raw_tickets
     ]
 
-    print(f"\n🧾 Found {len(tickets)} total tickets in main_table.")
+    print(f"\n🧾 ƒound {len(tickets)} total tickets in main_table.")
     if input("Process ALL tickets? (Y/N): ").strip().lower() != "y":
         print("❌ Aborted.")
         return

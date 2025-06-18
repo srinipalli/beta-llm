@@ -8,7 +8,7 @@ class Ticket(BaseModel):
     module: str
     title: str
     description: str
-    priority: str
+    triage: str
     status: str
     category: str
     reported_date: date
@@ -24,6 +24,8 @@ class Ticket(BaseModel):
 class ProcessedTicket(BaseModel):
     ticket_id: str
     summary: str
-    priority: str
+    triage: str
     category: str
     solution: str
+    triage_reason: str
+    category_reason: str
