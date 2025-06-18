@@ -7,7 +7,10 @@ import os
 import time
 from dotenv import load_dotenv
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
-
+from sentence_transformers import SentenceTransformer
+import lancedb
+from llm.checksql import is_ticket_embedded, mark_ticket_as_embedded
+from llm.embed import embed_and_store
 load_dotenv()
 
 # --- DB Connection ---
@@ -20,6 +23,8 @@ conn = mysql.connector.connect(
 print("DATABASE ⏱️: USING ", os.getenv("MYSQL_DB"))
 print("¯"*40)
 print()
+
+
 # --- Config ---
 MAX_CONCURRENT_LLM_REQUESTS = 5
 MAX_REQUESTS_PER_MINUTE = 60
@@ -84,14 +89,25 @@ async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Sem
             cursor.execute("""
                 INSERT INTO reasons (ticket_id, triage_reason, category_reason)
                 VALUES (%s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                triage_reason = VALUES(triage_reason),
+                category_reason = VALUES(category_reason)
             """, (processed.ticket_id, processed.triage_reason, processed.category_reason))
             db_conn.commit()
+            cursor.execute("""
+                UPDATE metrics SET summarized = 'Y'
+                WHERE ticket_id = %s
+                           """,(processed.ticket_id,))
             print(f"📥 Inserted/Updated processed ticket {processed.ticket_id}")
 
             assigned = assign_ticket(processed.ticket_id, db_conn)
             if not assigned:
                 print(f"⚠️ [WARN] Ticket {processed.ticket_id} not assigned.")
-
+            if not is_ticket_embedded(processed.ticket_id):
+                embed_and_store(processed)
+                mark_ticket_as_embedded(processed.ticket_id)
+            else:
+                print(f"✅ Already embedded: {processed.ticket_id}")
             return processed
 
         except Exception as e:

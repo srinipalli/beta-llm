@@ -1,0 +1,3792 @@
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Multiple failed attempts lock out valid users
+Description: After 3 failed logins, even valid users are locked out without reset options.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Cart items disappear after reload
+Description: When refreshing the cart page, previously added items vanish intermittently.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Welcome emails not sent to Gmail addresses
+Description: New Gmail users are not receiving onboarding emails due to SPF/DKIM failure.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Report names overflow sidebar
+Description: In the analytics panel, long report titles overflow and overlap with the UI.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Admin panel crashes on bulk user import
+Description: Uploading large CSVs with over 500 users causes memory crash in admin panel.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Dark mode not supported
+Description: Users on iOS and Android request dark mode support for accessibility.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Data loss after rollback
+Description: Transactional rollback sometimes leaves tables partially updated or corrupted.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Recurring tasks not triggering on Mondays
+Description: Weekly scheduled jobs skip execution on Mondays due to a timezone mismatch.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: OAuth token not refreshing
+Description: Access tokens are not getting refreshed automatically after expiry, causing user logouts.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Filter results ignore date range
+Description: When users select a date filter in search, results still include entries outside the range.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Refund process fails intermittently
+Description: Some refund attempts timeout or fail to process, especially for international transactions.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Hover tooltip overlaps buttons
+Description: On the dashboard, tooltips obscure nearby buttons making them hard to click.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add CSV export for usage stats
+Description: Users want the ability to export their usage analytics data in CSV format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Push notifications sent twice
+Description: Mobile app notifications for events are being sent twice to some users.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: OAuth token not refreshing
+Description: Access tokens are not getting refreshed automatically after expiry, causing user logouts.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Filter results ignore date range
+Description: When users select a date filter in search, results still include entries outside the range.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Refund process fails intermittently
+Description: Some refund attempts timeout or fail to process, especially for international transactions.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Hover tooltip overlaps buttons
+Description: On the dashboard, tooltips obscure nearby buttons making them hard to click.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add CSV export for usage stats
+Description: Users want the ability to export their usage analytics data in CSV format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Push notifications sent twice
+Description: Mobile app notifications for events are being sent twice to some users.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket BUG-4003: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Login fails with correct credentials
+Description: Multiple users are unable to log in even with valid usernames and passwords.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Delayed payment confirmation
+Description: Users report a delay of over 10 minutes in payment confirmation after checkout.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket BUG-4005: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Data loss during server crash
+Description: System crash caused the loss of customer order records from last 24 hours.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+].
+ERROR:root:[ERROR] While processing ticket BUG-4006: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 19
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Misaligned buttons on dashboard
+Description: UI buttons on the admin dashboard appear misaligned on Safari browser.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 19
+}
+].
+ERROR:root:[ERROR] While processing ticket TCK-1001: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 19
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Email notifications not triggered
+Description: Some transactional emails are not being sent after order placement.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+].
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Search results incomplete
+Description: Several relevant products are missing from search results for common queries.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1002: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 16
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add export to Excel feature
+Description: Users have requested an option to export reports in Excel format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1003: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 15
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 15
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Forgot password link UI broken
+Description: The 'Forgot Password?' link doesn't appear properly on mobile devices.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1004: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 15
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1005: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: API returns 500 error for invalid payload
+Description: Instead of a 400 Bad Request, the API returns a 500 error when payload is malformed.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1006: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Double payment charged to users
+Description: Some users have been charged twice for the same order due to a retry bug.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+].
+ERROR:root:[ERROR] While processing ticket TCK-1007: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 12
+}
+].
+ERROR:root:[ERROR] While processing ticket TCK-1008: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 12
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1009: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1010: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 9
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Refund process fails intermittently
+Description: Some refund attempts timeout or fail to process, especially for international transactions.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add CSV export for usage stats
+Description: Users want the ability to export their usage analytics data in CSV format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+].
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Push notifications sent twice
+Description: Mobile app notifications for events are being sent twice to some users.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 7
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Login fails with correct credentials
+Description: Multiple users are unable to log in even with valid usernames and passwords.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Delayed payment confirmation
+Description: Users report a delay of over 10 minutes in payment confirmation after checkout.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket BUG-4003: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 5
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket BUG-4005: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 5
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 4
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Data loss during server crash
+Description: System crash caused the loss of customer order records from last 24 hours.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket BUG-4006: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 4
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Misaligned buttons on dashboard
+Description: UI buttons on the admin dashboard appear misaligned on Safari browser.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1001: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Email notifications not triggered
+Description: Some transactional emails are not being sent after order placement.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1002: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Search results incomplete
+Description: Several relevant products are missing from search results for common queries.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+].
+ERROR:root:[ERROR] While processing ticket TCK-1003: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add export to Excel feature
+Description: Users have requested an option to export reports in Excel format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+].
+ERROR:root:[ERROR] While processing ticket TCK-1004: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Forgot password link UI broken
+Description: The 'Forgot Password?' link doesn't appear properly on mobile devices.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+].
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 58
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: API returns 500 error for invalid payload
+Description: Instead of a 400 Bad Request, the API returns a 500 error when payload is malformed.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1005: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 57
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 57
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Double payment charged to users
+Description: Some users have been charged twice for the same order due to a retry bug.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1006: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 57
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 56
+}
+].
+ERROR:root:[ERROR] While processing ticket TCK-1007: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 56
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1008: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1009: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1010: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Refund process fails intermittently
+Description: Some refund attempts timeout or fail to process, especially for international transactions.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add CSV export for usage stats
+Description: Users want the ability to export their usage analytics data in CSV format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+].
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Push notifications sent twice
+Description: Mobile app notifications for events are being sent twice to some users.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Login fails with correct credentials
+Description: Multiple users are unable to log in even with valid usernames and passwords.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Delayed payment confirmation
+Description: Users report a delay of over 10 minutes in payment confirmation after checkout.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket BUG-4003: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 49
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket BUG-4005: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 49
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 49
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Data loss during server crash
+Description: System crash caused the loss of customer order records from last 24 hours.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket BUG-4006: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 48
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Misaligned buttons on dashboard
+Description: UI buttons on the admin dashboard appear misaligned on Safari browser.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 48
+}
+].
+ERROR:root:[ERROR] While processing ticket TCK-1001: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Email notifications not triggered
+Description: Some transactional emails are not being sent after order placement.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1002: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 46
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Search results incomplete
+Description: Several relevant products are missing from search results for common queries.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 46
+}
+].
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 45
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add export to Excel feature
+Description: Users have requested an option to export reports in Excel format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1003: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1004: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Forgot password link UI broken
+Description: The 'Forgot Password?' link doesn't appear properly on mobile devices.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+].
+WARNING:langchain_google_genai.chat_models:Retrying langchain_google_genai.chat_models._achat_with_retry.<locals>._achat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 43
+}
+].
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: API returns 500 error for invalid payload
+Description: Instead of a 400 Bad Request, the API returns a 500 error when payload is malformed.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+ERROR:root:[ERROR] While processing ticket TCK-1005: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 42
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ERROR:root:[ERROR] While processing ticket TCK-1006: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 42
+}
+]
+
+ERROR:root:+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Double payment charged to users
+Description: Some users have been charged twice for the same order due to a retry bug.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Refund process fails intermittently
+Description: Some refund attempts timeout or fail to process, especially for international transactions.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Add CSV export for usage stats
+Description: Users want the ability to export their usage analytics data in CSV format.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Push notifications sent twice
+Description: Mobile app notifications for events are being sent twice to some users.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Login fails with correct credentials
+Description: Multiple users are unable to log in even with valid usernames and passwords.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Delayed payment confirmation
+Description: Users report a delay of over 10 minutes in payment confirmation after checkout.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Data loss during server crash
+Description: System crash caused the loss of customer order records from last 24 hours.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Misaligned buttons on dashboard
+Description: UI buttons on the admin dashboard appear misaligned on Safari browser.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Email notifications not triggered
+Description: Some transactional emails are not being sent after order placement.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+
+INFO:root:Raw prompt after augmenting:
+
+INFO:root:
+You are an expert IT support assistant. You recieve IT tickets daily. Given the following ticket details:
+
+Title: Search results incomplete
+Description: Several relevant products are missing from search results for common queries.
+Return the following fields only:
+The output should be a markdown code snippet formatted in the following schema, including the leading and trailing "```json" and "```":
+
+```json
+{
+	"summary": string  // Summary of the issue, in about 50 to 75 words. It should be concise and to-the-point, capturing the essence of the ticket. It should also be extremely easy to read and understand. Use acronyms like 'btw' or 'fyi' if necessary.
+	"triage": string  // Assign the triage levels of L1, L2, L3, L4 or L5. 
+                   according to the following criteria:
+                   L1: Critical ticket of extreme priority. Assess the ticket ASAP.
+                   L2: High priority: must be addressed very fast.
+                   L3: Medium priority: must be dealt with sooner or later, avoid ignoring.
+                   L4: Low priority: can be dealt with later
+                   L5: Planning. Can ignore for now, re-assess the ticket later.
+                   Only give L1, L2, L3, L4, L5. No additional words.
+	"category": string  // Process the tickets and assign any one among (Frontend, Backend, Infrastructure, Data). It should be one word only, first letter uppercase.
+	"solution": string  // solution of 1 or 2 sentences that can address the issue directly and solve it in the most effective manner.
+	"triage_reason": string  // Correct reason for assigning the given triage level. In about 15 words. It must be concise and to-the-point.
+	"category_reason": string  // Correct reason for assigning the given category. In about 15 words. It must be concise and to-the-point. 
+}
+```
+
+
+====================
+📚 SIMILAR TICKET CONTEXT:
+[No similar tickets found]
+INFO:root:
+

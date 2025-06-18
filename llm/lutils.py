@@ -8,10 +8,15 @@ from dotenv import load_dotenv
 import os
 import json # To handle parsing the LLM response content if needed
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
-
-# Assuming your models.py defines Ticket and ProcessedTicket
-from llm.models import Ticket, ProcessedTicket
-
+try:
+    from models import Ticket, ProcessedTicket
+    from rag import get_similar_ticket_context
+except:
+    from llm.models import Ticket, ProcessedTicket
+    from llm.rag import get_similar_ticket_context
+    
+import logging
+logging.basicConfig(filename='llm_logs.log', level=logging.INFO)
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
@@ -21,6 +26,7 @@ if not GEMINI_API_KEY:
 # in an async context we might need to ensure your LLM client
 # can handle async calls or be instantiated within the async loop
 # LangChain's ChatGoogleGenerativeAI is generally async-compatible.
+
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=GEMINI_API_KEY)
 
 # Define the expected response structure
@@ -49,12 +55,10 @@ You are an expert IT support assistant. You recieve IT tickets daily. Given the 
 
 Title: {title}
 Description: {description}
-Module: {module}
-
 Return the following fields only:
 {format_instructions}
 """,
-    input_variables=["title", "description", "module"],
+    input_variables=["title", "description"],
     partial_variables={"format_instructions": output_parser.get_format_instructions()}
 )
 
@@ -69,14 +73,26 @@ class RateLimitExceeded(Exception):
     retry=retry_if_exception_type(RateLimitExceeded) # Only retry if this specific exception
 )
 async def process_ticket_with_retry(ticket: Ticket) -> ProcessedTicket:
+
+    
     prompt = prompt_template.format(
         title=ticket.title,
         description=ticket.description,
-        module=ticket.module
     )
+        # Get RAG context
+    context = get_similar_ticket_context(ticket.title, ticket.description)
+    rag_augmented_prompt = (
+        f"{prompt}\n\n"
+        f"====================\n"
+        f"📚 SIMILAR TICKET CONTEXT:\n"
+        f"{context if context else '[No similar tickets found]'}"
+    )
+    logging.info("Raw prompt after augmenting:\n")
+    logging.info(rag_augmented_prompt)
+    logging.info("\n")
     try:
         # LangChain's .ainvoke() is for async calls
-        response = await llm.ainvoke(prompt)
+        response = await llm.ainvoke(rag_augmented_prompt)
         
         # print("LLM raw response:")
         # print(response.content) # Enable for debugging
@@ -85,10 +101,13 @@ async def process_ticket_with_retry(ticket: Ticket) -> ProcessedTicket:
         # This is a simplification; you might need to parse the response content
         # more robustly to identify a rate limit message from the LLM itself,
         # or rely on HTTP status codes if using a direct API client like aiohttp.
+        
+
         if "rate limit" in response.content.lower() or "quota exceeded" in response.content.lower():
             raise RateLimitExceeded(f"LLM indicated rate limit for ticket {ticket.ticket_id}")
 
         parsed = output_parser.parse(response.content)
+        
         
         return ProcessedTicket(
             ticket_id=ticket.ticket_id,
@@ -100,7 +119,9 @@ async def process_ticket_with_retry(ticket: Ticket) -> ProcessedTicket:
             category_reason=parsed["category_reason"]
         )
     except Exception as e:
-        print(f"[ERROR] While processing ticket {ticket.ticket_id}: {e}")
+        logging.error(f"[ERROR] While processing ticket {ticket.ticket_id}: {e}\n")
+        logging.error("+=+="*20)
         # Re-raise the exception if it's not a RateLimitExceeded for tenacity to handle
         # or if it's a critical error you don't want to retry.
         raise # Important: re-raise the exception for tenacity to catch
+    

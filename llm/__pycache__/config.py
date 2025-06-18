@@ -1,2 +1,0 @@
-GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAFKWqUYltKVXbrYR0c81VRgcJISKAxtjk"
-GEMINI_API_KEY = "AIzaSyAFKWqUYltKVXbrYR0c81VRgcJISKAxtjk"
