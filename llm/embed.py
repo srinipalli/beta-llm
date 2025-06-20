@@ -1,19 +1,25 @@
 import numpy as np
 from sentence_transformers import SentenceTransformer
-import lancedb
 from llm.vectorstore.vector_db import get_lance_table
 
 embedding_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
 table = get_lance_table()
 
-def embed_and_store(processed):
-    vector = embedding_model.encode(processed.summary).astype(np.float32).tolist()
+def embed_and_store(row: dict):
+    vector = embedding_model.encode(row.get("summary", "")).astype(np.float32).tolist()
 
-    row = {
-        "ticket_id": processed.ticket_id,
-        "summary": processed.summary,
+    record = {
+        "ticket_id": row["ticket_id"],
+        "title": row.get("title", ""),
+        "summary": row.get("summary", ""),
+        "solution": row.get("solution", ""),
+        "category": row.get("category", ""),
+        "triage": row.get("triage", "L5"),
+        "source": row.get("source", "unknown"),
+        "status": row.get("status", "unknown"),
+        "employee_name": row.get("employee_name", "Unknown"),
         "vector": vector
     }
 
-    table.add([row])
-    print(f"✅ Embedded & stored: {processed.ticket_id}")
+    table.add([record])
+    print(f"✅ Embedded & stored ticket: {row['ticket_id']}")

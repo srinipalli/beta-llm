@@ -53,6 +53,66 @@ async def process_ticket_with_retry(ticket):
         raise
 
 # --- Single ticket processor ---
+# async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Semaphore, db_conn):
+#     global last_call_time
+
+#     async with semaphore:
+#         async with rate_limiter_lock:
+#             elapsed = time.time() - last_call_time
+#             wait_time = max(0, MIN_INTERVAL_BETWEEN_CALLS - elapsed)
+#             if wait_time > 0:
+#                 await asyncio.sleep(wait_time)
+#             last_call_time = time.time()
+
+#         try:
+#             print(f"🚀 Processing ticket: {ticket.ticket_id}")
+#             processed = await process_ticket_with_retry(ticket)
+#             print(f"✅ Processed ticket {ticket.ticket_id}")
+
+#             cursor = db_conn.cursor()
+#             cursor.execute("""
+#                 INSERT INTO processed (ticket_id, summary, triage, category, solution)
+#                 VALUES (%s, %s, %s, %s, %s)
+#                 ON DUPLICATE KEY UPDATE
+#                     summary=VALUES(summary),
+#                     triage=VALUES(triage),
+#                     category=VALUES(category),
+#                     solution=VALUES(solution)
+#             """, (
+#                 processed.ticket_id,
+#                 processed.summary,
+#                 processed.triage.strip(),
+#                 processed.category.strip(),
+#                 processed.solution
+#             ))
+#             db_conn.commit()
+#             cursor.execute("""
+#                 INSERT INTO reasons (ticket_id, triage_reason, category_reason)
+#                 VALUES (%s, %s, %s)
+#                 ON DUPLICATE KEY UPDATE
+#                 triage_reason = VALUES(triage_reason),
+#                 category_reason = VALUES(category_reason)
+#             """, (processed.ticket_id, processed.triage_reason, processed.category_reason))
+#             db_conn.commit()
+#             cursor.execute("""
+#                 UPDATE metrics SET summarized = 'Y'
+#                 WHERE ticket_id = %s
+#                            """,(processed.ticket_id,))
+#             print(f"📥 Inserted/Updated processed ticket {processed.ticket_id}")
+
+#             assigned = assign_ticket(processed.ticket_id, db_conn)
+#             if not assigned:
+#                 print(f"⚠️ [WARN] Ticket {processed.ticket_id} not assigned.")
+#             # EMBEDDING 
+#             if not is_ticket_embedded(processed.ticket_id):
+#                 embed_and_store(processed)
+#                 mark_ticket_as_embedded(processed.ticket_id)
+#             else:
+#                 print(f"✅ Already embedded: {processed.ticket_id}")
+#             return processed
+#         except Exception as e:
+#             print(f"❌ [ERROR] Processing ƒailed ƒor ticket {ticket.ticket_id}: {e}")
+#             return None
 async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Semaphore, db_conn):
     global last_call_time
 
@@ -70,6 +130,8 @@ async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Sem
             print(f"✅ Processed ticket {ticket.ticket_id}")
 
             cursor = db_conn.cursor()
+
+            # === Save to MySQL ===
             cursor.execute("""
                 INSERT INTO processed (ticket_id, summary, triage, category, solution)
                 VALUES (%s, %s, %s, %s, %s)
@@ -86,34 +148,58 @@ async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Sem
                 processed.solution
             ))
             db_conn.commit()
+
             cursor.execute("""
                 INSERT INTO reasons (ticket_id, triage_reason, category_reason)
                 VALUES (%s, %s, %s)
                 ON DUPLICATE KEY UPDATE
-                triage_reason = VALUES(triage_reason),
-                category_reason = VALUES(category_reason)
+                    triage_reason = VALUES(triage_reason),
+                    category_reason = VALUES(category_reason)
             """, (processed.ticket_id, processed.triage_reason, processed.category_reason))
             db_conn.commit()
+
             cursor.execute("""
                 UPDATE metrics SET summarized = 'Y'
                 WHERE ticket_id = %s
-                           """,(processed.ticket_id,))
+            """, (processed.ticket_id,))
+            db_conn.commit()
+
             print(f"📥 Inserted/Updated processed ticket {processed.ticket_id}")
 
             assigned = assign_ticket(processed.ticket_id, db_conn)
             if not assigned:
                 print(f"⚠️ [WARN] Ticket {processed.ticket_id} not assigned.")
+
+            # === EMBEDDING WITH FULL JOINED DATA ===
             if not is_ticket_embedded(processed.ticket_id):
-                embed_and_store(processed)
-                mark_ticket_as_embedded(processed.ticket_id)
+                # run JOIN query to get full row
+                cursor.execute("""
+                    SELECT m.source, m.ticket_id, m.title, m.status,
+                           p.triage, p.category, e.employee_name, p.summary, p.solution
+                    FROM main_table AS m
+                    JOIN processed AS p ON m.ticket_id = p.ticket_id
+                    JOIN assign AS a ON m.ticket_id = a.ticket_id
+                    JOIN employee AS e ON a.assigned_id = e.employee_id
+                    WHERE m.ticket_id = %s
+                """, (processed.ticket_id,))
+                result = cursor.fetchone()
+
+                if result:
+                    columns = [desc[0] for desc in cursor.description]
+                    full_row = dict(zip(columns, result))
+                    embed_and_store(full_row)
+                    mark_ticket_as_embedded(processed.ticket_id)
+                else:
+                    print(f"⚠️ [WARN] Could not fetch full row for ticket {processed.ticket_id}")
             else:
                 print(f"✅ Already embedded: {processed.ticket_id}")
+
+            cursor.close()
             return processed
 
         except Exception as e:
             print(f"❌ [ERROR] Processing ƒailed ƒor ticket {ticket.ticket_id}: {e}")
             return None
-
 # --- Retry loop for all tickets ---
 async def process_all_tickets():
     cursor = conn.cursor()
