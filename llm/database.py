@@ -1,8 +1,8 @@
 from mysql.connector import connect 
 from os import getenv
-from dotenv import load_dotenv as load_environment
+from dotenv import load_dotenv
 
-load_environment()
+load_dotenv()
 
 def get_connection():
     return connect(

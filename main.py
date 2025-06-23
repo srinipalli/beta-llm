@@ -170,32 +170,26 @@ async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Sem
             if not assigned:
                 print(f"⚠️ [WARN] Ticket {processed.ticket_id} not assigned.")
 
-            # === EMBEDDING WITH FULL JOINED DATA ===
-            if not is_ticket_embedded(processed.ticket_id):
-                # run JOIN query to get full row
-                cursor.execute("""
-                    SELECT m.source, m.ticket_id, m.title, m.status,
-                           p.triage, p.category, e.employee_name, p.summary, p.solution
-                    FROM main_table AS m
-                    JOIN processed AS p ON m.ticket_id = p.ticket_id
-                    JOIN assign AS a ON m.ticket_id = a.ticket_id
-                    JOIN employee AS e ON a.assigned_id = e.employee_id
-                    WHERE m.ticket_id = %s
-                """, (processed.ticket_id,))
-                result = cursor.fetchone()
+            # # === EMBED FROM `ground` table ===
+            # if not is_ticket_embedded(processed.ticket_id):
+            #     cursor.execute("""
+            #         SELECT *
+            #         FROM ground
+            #         WHERE ticket_id = %s
+            #     """, (processed.ticket_id,))
+            #     result = cursor.fetchone()
 
-                if result:
-                    columns = [desc[0] for desc in cursor.description]
-                    full_row = dict(zip(columns, result))
-                    embed_and_store(full_row)
-                    mark_ticket_as_embedded(processed.ticket_id)
-                else:
-                    print(f"⚠️ [WARN] Could not fetch full row for ticket {processed.ticket_id}")
-            else:
-                print(f"✅ Already embedded: {processed.ticket_id}")
-
-            cursor.close()
-            return processed
+            #     if result:
+            #         columns = [desc[0] for desc in cursor.description]
+            #         full_row = dict(zip(columns, result))
+            #         embed_and_store(full_row)
+            #         mark_ticket_as_embedded(processed.ticket_id)
+            #     else:
+            #         print(f"⚠️ [WARN] No ground row found for {processed.ticket_id}")
+            # else:
+            #     print(f"✅ Already embedded: {processed.ticket_id}")
+            # cursor.close()
+            # return processed
 
         except Exception as e:
             print(f"❌ [ERROR] Processing ƒailed ƒor ticket {ticket.ticket_id}: {e}")
@@ -204,7 +198,13 @@ async def process_and_store_single_ticket(ticket: Ticket, semaphore: asyncio.Sem
 async def process_all_tickets():
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM main_table")
+    cursor.execute("""
+        SELECT m.*
+        FROM main_table AS m
+        LEFT JOIN ground AS g ON m.ticket_id = g.ticket_id
+        WHERE g.ticket_id IS NULL
+    """)
+
     raw_tickets = cursor.fetchall()
 
     tickets = [

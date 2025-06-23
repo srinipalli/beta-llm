@@ -11,6 +11,8 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 REQUEST_INTERVAL_SECONDS = 2.50
 last_request_time = 0
 
+
+# HORSE 7
 def process_ticket(ticket: Ticket) -> ProcessedTicket:
     global last_request_time
 
