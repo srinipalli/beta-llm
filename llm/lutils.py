@@ -1,19 +1,15 @@
-# llm/lutils.py
-
 import asyncio
-import aiohttp
 import os
-import json
 import logging
 from dotenv import load_dotenv
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from langchain.prompts import PromptTemplate
 from langchain.output_parsers import ResponseSchema, StructuredOutputParser
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import AzureChatOpenAI
 from langfuse import get_client
 from langfuse.langchain import CallbackHandler
 
-# Try both module paths for RAG utilities and models
+# Try both module paths
 try:
     from models import Ticket, ProcessedTicket
     from rag import get_similar_ticket_context
@@ -21,39 +17,47 @@ except ImportError:
     from llm.models import Ticket, ProcessedTicket
     from llm.rag import get_similar_ticket_context
 
-# Configure logging to file
-logging.basicConfig(filename='llm_logs.log', level=logging.INFO)  # Python logging docs [4]
+# Logging
+logging.basicConfig(filename='llm_logs.log', level=logging.INFO)
 
+# Load env variables
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-if not GEMINI_API_KEY:
-    raise ValueError("GEMINI API KEY IS NOT SET IN YOUR ENVIRONMENT. PLEASE SET IT. NOW.")  # Env var checking [1]
+AZURE_API_KEY     = os.getenv("AZURE_OPENAI_API_KEY")
+AZURE_API_BASE    = os.getenv("AZURE_OPENAI_ENDPOINT")
+AZURE_DEPLOYMENT  = os.getenv("AZURE_DEPLOYMENT_NAME")
+AZURE_API_VERSION = os.getenv("AZURE_API_VERSION", "2024-12-01")
 
-# Initialize Langfuse tracing client and global callback handler
-langfuse         = get_client()                           # Langfuse Python SDK v3 [1]
-global_handler   = CallbackHandler()                      # Generic handler for nested spans
+if not all([AZURE_API_KEY, AZURE_API_BASE, AZURE_DEPLOYMENT]):
+    raise ValueError("Missing Azure OpenAI credentials or configuration in .env")
 
-# Initialize async LLM
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
-    google_api_key=GEMINI_API_KEY
+# Langfuse Tracing
+langfuse = get_client()
+global_handler = CallbackHandler()
+
+# Azure LLM
+llm = AzureChatOpenAI(
+    azure_endpoint=AZURE_API_BASE,
+    deployment_name=AZURE_DEPLOYMENT,  # 👈 e.g. "gpt-4-1-mini"
+    api_version=AZURE_API_VERSION,
+    api_key=AZURE_API_KEY,
+    temperature=0.2,
 )
 
-# Define expected response structure using LangChain’s StructuredOutputParser [2]
+# Output format schema
 response_schemas = [
-    ResponseSchema(name="summary",    description="Summary of the issue, in 50–75 words. Use acronyms like 'btw' or 'fyi' if needed."),
-    ResponseSchema(name="triage",     description="Assign L1–L5 levels only. No extra text."),
-    ResponseSchema(name="category",   description="One of Frontend, Backend, Infrastructure, Data."),
-    ResponseSchema(name="solution",   description="Solution in 1–2 sentences addressing the issue."),
-    ResponseSchema(name="triage_reason",   description="15-word reason for triage level."),
-    ResponseSchema(name="category_reason", description="15-word reason for category.")
+    ResponseSchema(name="summary", description="50–75 word summary of the issue."),
+    ResponseSchema(name="triage", description="Assign priority: L1 to L5 only. L1 is the basic level(least prioritized), L2 is the next level to L1 (low priorirized), L3 is the next level to L2 (medium priority), L4 is a high prioritized ticket and L5 is a critical ticket(most prioritized) . No extra text."),
+    ResponseSchema(name="category", description="Choose one: Payroll, Leave Management, Authentication, Reporting, Time Tracking, Notifications, User Management, Performance, Recruitment, Attendance, Dashboard, Globalization, Directory, Help, Leave, UI/UX, Documents, Integrations."),
+    ResponseSchema(name="solution", description="Provide a 1–2 sentence solution."),
+    ResponseSchema(name="triage_reason", description="15-word explanation for triage level."),
+    ResponseSchema(name="category_reason", description="15-word explanation for category.")
 ]
 output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
 
-# Prompt template with formatting instructions
+# Prompt template
 prompt_template = PromptTemplate(
     template="""
-You are an expert IT support assistant. You receive IT tickets daily. Given:
+You are an expert IT support assistant. Suppose you're given a ticket like this:
 
 Title: {title}
 Description: {description}
@@ -61,32 +65,26 @@ Description: {description}
 Return only these fields:
 {format_instructions}
 """,
-    input_variables=["title","description"],
+    input_variables=["title", "description"],
     partial_variables={"format_instructions": output_parser.get_format_instructions()}
 )
 
-# Custom exception for rate limits
+# Custom Exception
 class RateLimitExceeded(Exception):
     pass
 
-# Retry decorator with exponential backoff on RateLimitExceeded [3]
+# Retry logic with backoff
 @retry(
     wait=wait_exponential(multiplier=1, min=4, max=60),
     stop=stop_after_attempt(5),
     retry=retry_if_exception_type(RateLimitExceeded)
 )
 async def process_ticket_with_retry(ticket: Ticket) -> ProcessedTicket:
-    """
-    Process a support ticket: build prompt, augment via RAG context,
-    call Gemini async, parse response, and trace all steps in Langfuse.
-    """
-    # Format base prompt
     base_prompt = prompt_template.format(
         title=ticket.title,
         description=ticket.description
     )
 
-    # Retrieve similar ticket context (RAG)
     context = get_similar_ticket_context(ticket.title, ticket.description)
     full_prompt = (
         f"{base_prompt}\n\n"
@@ -95,16 +93,13 @@ async def process_ticket_with_retry(ticket: Ticket) -> ProcessedTicket:
         f"{context or '[No similar tickets found]'}"
     )
 
-    # Log raw prompt for debug
-    logging.info("Raw prompt after augmenting:\n%s\n", full_prompt)
+    logging.info("Prompt for ticket %s:\n%s", ticket.ticket_id, full_prompt)
 
-    # Start top‐level span for this ticket processing
     with langfuse.start_as_current_span(name="process-ticket") as span:
-        # Record input data
         span.update_trace(
             input={
                 "ticket_id": ticket.ticket_id,
-                "title":     ticket.title,
+                "title": ticket.title,
                 "description": ticket.description,
                 "full_prompt": full_prompt
             },
@@ -112,31 +107,19 @@ async def process_ticket_with_retry(ticket: Ticket) -> ProcessedTicket:
             session_id=f"ticket-{ticket.ticket_id}"
         )
 
-        # Obtain a handler scoped to this span
         handler = CallbackHandler()
 
-        # Propagates I/O to this span [1]
-
         try:
-            # Invoke the LLM asynchronously with span‐scoped handler
-            response = await llm.ainvoke(full_prompt, config={"callbacks":[handler]})
+            response = await llm.ainvoke(full_prompt, config={"callbacks": [handler]})
             raw_output = response.content.strip()
-
-            # Trace raw LLM output
             span.update_trace(output={"raw_output": raw_output})
 
-            # Detect rate limit messages
-            low = raw_output.lower()
-            if "rate limit" in low or "quota exceeded" in low:
-                raise RateLimitExceeded(f"Rate limit for ticket {ticket.ticket_id}")
+            if "rate limit" in raw_output.lower() or "quota exceeded" in raw_output.lower():
+                raise RateLimitExceeded(f"Rate limit hit for ticket {ticket.ticket_id}")
 
-            # Parse structured output
             parsed = output_parser.parse(raw_output)
-
-            # Trace parsed fields
             span.update_trace(output={"parsed": parsed})
 
-            # Return a structured ProcessedTicket
             return ProcessedTicket(
                 ticket_id       = ticket.ticket_id,
                 summary         = parsed["summary"],
@@ -148,7 +131,6 @@ async def process_ticket_with_retry(ticket: Ticket) -> ProcessedTicket:
             )
 
         except Exception as e:
-            # Log and trace any errors
-            logging.error("[ERROR] While processing ticket %s: %s", ticket.ticket_id, e)
+            logging.error("[ERROR] Failed processing ticket %s: %s", ticket.ticket_id, e)
             span.update_trace(output={"error": str(e)})
-            raise  # Re-raise for Tenacity to handle retry
+            raise
