@@ -2,3 +2,4 @@
 __pycache__/
 *.pyc
 .DS_Store
+ticket_vector_db
